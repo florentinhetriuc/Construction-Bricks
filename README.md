@@ -1,35 +1,70 @@
-# Construction Brick Project
+# Construction Brick Component
 
-# Project stack:
-`React + TypeScript + Vite`
+## Project Stack
+- React
+- TypeScript
+- Vite
+- Storybook
 
-# Project setup:
-1. `npm install`
-2. `npm run storybook`
-
-# Testing
-I wasn't able to implement any unit-tests for the ConstructionBrick.tsx and ConstructionBrick.utilities.ts files.
-For testing I would use react-testing-library with Jest.
-
-ConstructionBrick.utils.ts
-  - `getLogoBrickColor`
-  - `getLogoBrickVariant`
-  - `getLogoBrickBadgePosition`
-  For these three functions, we should test that we are receiving the expected output based on the given input
-
-ConstructionBrick.tsx
-  For this component:
-    - we want to test that getLogoBrickColor, getLogoBrickVariant, getLogoBrickBadgePosition functions are called with the right inputs;
-    - we want to test the rendering of the component, to make sure that the css classes are applied accordingly depending on the given props and also to make sure that the badgeNrOfDots are shown correctly depending on the given props or depending on the given variant.
-
-# Features for ConstructionBrick.tsx
-One feature implementation would be to add a prop called `badgePosition` with the following choices:
+### Installation
+Assuming `construction-brick` it's a design-system package we will use the following cmd
+```bash
+npm install construction-brick
 ```
-export enum ConstructionBrickBadgePosition {
-  TOP_RIGHT = "top-right",
-  BOTTOM_RIGHT = "bottom-right",
-  BOTTOM_LEFT = "bottom-left",
-  TOP_LEFT = "top-left",
+otherwise
+```bash
+npm install
+```
+
+### Development
+To run the Storybook development environment:
+```bash
+npm run storybook
+```
+
+### Basic Usage
+```tsx
+import { 
+  ConstructionBrick, 
+  ConstructionBrickColor, 
+  ConstructionBrickVariant 
+} from 'construction-brick';
+
+function MyComponent() {
+  return (
+    <ConstructionBrick
+      color={ConstructionBrickColor.RED}
+      variant={ConstructionBrickVariant.A}
+    >
+      <p>Your content here</p>
+    </ConstructionBrick>
+  );
 }
 ```
-This would allow us to position the `construction__badge` depending on our selection.
+
+## Testing
+Since this is a small component which doesn't require any integration-tests, I would use unit-tests and go with react-testing-library with Jest.
+
+Test cases should include:
+
+### Functions
+- `getLogoBrickColor`
+- `getLogoBrickVariant`
+- `getLogoBrickBadgePosition`
+Make sure that these functions are returning the right output depending on the given input
+
+### Component
+- Proper rendering
+- Validate CSS classes based on the given variants and colors
+- Badge dot count validation
+
+## Upcoming Features
+- Badge position customization with options:
+  ```typescript
+  enum ConstructionBrickBadgePosition {
+    TOP_RIGHT = "top-right",
+    BOTTOM_RIGHT = "bottom-right",
+    BOTTOM_LEFT = "bottom-left",
+    TOP_LEFT = "top-left",
+  }
+  ```
