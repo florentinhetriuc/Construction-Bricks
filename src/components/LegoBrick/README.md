@@ -1,18 +1,17 @@
 A React customizable element with different variants and colors.
 
 ## Variants
-- A
-- B
-- C
+Each variant display a different design and a default number of dots
+- A: 3 dots
+- B: 1 dot
+- C: 2 dots
 
-Each variant display a different design
 
 ## Colors:
+Used to define the background color of the component
 - Red
 - Green
 - Violet
-
-Used to define the background color of the component
 
 ## Expected Props
 
@@ -23,13 +22,6 @@ Used to define the background color of the component
 | `children` | `React.ReactNode` | Content to be rendered inside the brick | Yes |
 | `className` | `string` | Additional CSS classes | No |
 | `badgeNrOfDots` | `number` | Custom number of dots for the badge. If not provided, uses default based on variant | No |
-
-## Variants
-
-Each variant displays a default number of dots:
-- Variant A: 3 dots
-- Variant B: 1 dot
-- Variant C: 2 dots
 
 ## Usage
 
@@ -54,7 +46,3 @@ import { ConstructionBrickColor, ConstructionBrickVariant } from './Construction
   <p>Your content here</p>
 </ConstructionBrick>
 ```
-
-## Examples
-
-Check the Storybook for visual examples of all combinations of variants and colors.
