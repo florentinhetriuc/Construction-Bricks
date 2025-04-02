@@ -39,7 +39,7 @@ Make sure that these functions are returning the right output depending on the g
 - Validate CSS classes based on the given variants and colors
 - Badge dot count validation
 
-## Upcoming Features
+## Nice to have
 - Badge position customization with options:
   ```typescript
   enum ConstructionBrickBadgePosition {
