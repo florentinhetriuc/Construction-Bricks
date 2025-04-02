@@ -1,0 +1,141 @@
+@import "../theme/_theme";
+
+.lego-brick {
+    position: relative;
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-medium);
+    color: var(--white);
+
+    &__badge {
+        position: absolute;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 4px;
+        overflow: hidden;
+
+        .badge__dot {
+            width: 14px;
+            min-width: 14px;
+            height: 4px;
+            border-top-right-radius: 2px;
+        }
+
+        .badge__dot + .badge__dot {
+            margin-left: 8px;
+        }
+    }
+
+    &__content {
+        padding: 16px;
+        font-size: 0.875rem;
+
+        @media screen and (min-width: 768px) {
+            padding: 32px;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &.--variant-a &__badge {
+        top: 0;
+        left: 0;
+        max-width: calc(100% - 8px);
+        height: 10px;
+        background-color: var(--white);
+    }
+
+    &.--variant-b {
+        .lego-brick__badge {
+            top: 0;
+            right: 0;
+            max-width: calc(100% - 8px);
+            height: 10px;
+            padding-right: 24px;
+            background-color: var(--white);
+            overflow: visible;
+
+            @media screen and (min-width: 768px) {
+                padding-right: 32px;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 0;
+                height: 0;
+                background-color: var(--white);
+                border-bottom: 20px solid transparent;
+                border-right: 20px solid transparent;
+
+                @media screen and (min-width: 768px) {
+                    border-bottom: 26px solid transparent;
+                    border-right: 26px solid transparent;
+                }
+            }
+        }
+
+        .lego-brick__content {
+            padding-right: 40px;
+
+            @media screen and (min-width: 768px) {
+                padding-right: 64px;
+            }
+        }
+
+        &.--color-red .lego-brick__badge:after {
+            border-bottom-color: var(--red);
+        }
+
+        &.--color-green .lego-brick__badge:after {
+            border-bottom-color: var(--green);
+        }
+
+        &.--color-violet .lego-brick__badge:after {
+            border-bottom-color: var(--violet   );
+        }
+    }
+
+    &.--variant-c {
+        border-radius: 20px;
+
+        .lego-brick__badge {
+            top: 0;
+            right: 22px;
+            max-width: calc(100% - 52px);
+            height: 8px;
+            background-color: var(--white);
+
+            @media screen and (min-width: 768px) {
+                height: 10px;
+            }
+        }
+    }
+
+    &.--color-red {
+        background-color: var(--red);
+
+        .badge__dot {
+            background-color: var(--red);
+        }
+    }
+
+    &.--color-green {
+        background-color: var(--green);
+
+        .badge__dot {
+            background-color: var(--green);
+        }
+    }
+
+    &.--color-violet {
+        background-color: var(--violet);
+
+        .badge__dot {
+            background-color: var(--violet);
+        }
+    }
+}
