@@ -1,54 +1,35 @@
-# React + TypeScript + Vite
+# Lego Brick Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project stack:
+`React + TypeScript + Vite`
 
-Currently, two official plugins are available:
+# Project setup:
+1. `npm install`
+2. `npm run storybook`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Testing
+I wasn't able to implement any unit-tests for the LegoBrick.tsx and LegoBrick.utilities.ts files.
+For testing I would use react-testing-library with Jest.
 
-## Expanding the ESLint configuration
+LegoBrick.utils.ts
+  - `getLogoBrickColor`
+  - `getLogoBrickVariant`
+  - `getLogoBrickBadgePosition`
+  For these three functions, we should test that we are receiving the expected output based on the given input
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+LegoBrick.tsx
+  For this component:
+    - we want to test that getLogoBrickColor, getLogoBrickVariant, getLogoBrickBadgePosition functions are called with the right inputs;
+    - we want to test the rendering of the component, to make sure that the css classes are applied accordingly depending on the given props and also to make sure that the badgeNrOfDots are shown correctly depending on the given props or depending on the given variant.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# Features for LegoBrick.tsx
+One feature implementation would be to add a prop called `badgePosition` with the following choices:
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+export enum LegoBrickBadgePosition {
+  TOP_RIGHT = "top-right",
+  BOTTOM_RIGHT = "bottom-right",
+  BOTTOM_LEFT = "bottom-left",
+  TOP_LEFT = "top-left",
+}
 ```
+This would allow us to position the `lego-bricks__badge` depending on our selection.
