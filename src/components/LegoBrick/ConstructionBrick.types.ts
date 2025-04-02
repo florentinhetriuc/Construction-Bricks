@@ -19,6 +19,7 @@ export enum ConstructionBrickBadgePosition {
 
 export interface ConstructionBrickProps {
   color: ConstructionBrickColor;
+  className?: string;
   variant: ConstructionBrickVariant;
   children: React.ReactNode;
   badgePosition?: ConstructionBrickBadgePosition;

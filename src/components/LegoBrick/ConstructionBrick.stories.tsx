@@ -1,10 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ConstructionBrick } from "./ConstructionBrick";
 import { ConstructionBrickColor, ConstructionBrickVariant } from "./ConstructionBrick.types";
+import README from './README.md?raw';
 
 const meta: Meta<typeof ConstructionBrick> = {
   title: "Components/ConstructionBrick",
   component: ConstructionBrick,
+  parameters: {
+    docs: {
+      description: {
+        component: README
+      }
+    }
+  },
   tags: ["autodocs"],
   argTypes: {
     color: {
