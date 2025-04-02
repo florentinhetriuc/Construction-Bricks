@@ -1,25 +1,25 @@
 import React, { useMemo } from "react";
 import classNames from "classnames";
 // types
-import { LegoBrickProps } from "./LegoBrick.types";
+import { ConstructionBrickProps } from "./ConstructionBrick.types";
 // utils
 import {
   getLogoBrickColor,
   getLogoBrickVariant,
   nrOfDotsByVariant,
-} from "./LegoBrick.utils";
+} from "./ConstructionBrick.utils";
 // styles
-import "../../styles/components/_lego-brick.scss";
+import "../../styles/components/_construction-brick.scss";
 
-export const LegoBrick: React.FC<LegoBrickProps> = ({
+export const ConstructionBrick: React.FC<ConstructionBrickProps> = ({
   children,
   color,
   variant,
   //   badgePosition,
   badgeNrOfDots,
-}: LegoBrickProps) => {
+}) => {
   const classes = classNames(
-    "lego-brick",
+    "construction-brick",
     getLogoBrickColor(color),
     getLogoBrickVariant(variant)
   );
@@ -32,13 +32,13 @@ export const LegoBrick: React.FC<LegoBrickProps> = ({
   }, [badgeNrOfDots, variant]);
 
   return (
-    <div className={classes} data-testid="lego-brick">
-      <div className="lego-brick__badge badge" data-testid="lego-brick-badge">
+    <div className={classes} data-testid="construction-brick">
+      <div className="construction-brick__badge badge" data-testid="construction-brick-badge">
         {numberOfDots.map((_, index) => (
           <div key={`badge-dot-${index}`} className="badge__dot" />
         ))}
       </div>
-      <div className="lego-brick__content" data-testid="lego-brick-content">
+      <div className="construction-brick__content" data-testid="construction-brick-content">
         {children}
       </div>
     </div>

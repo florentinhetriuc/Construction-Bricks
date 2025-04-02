@@ -1,1 +1,1 @@
-export * from './LegoBrick';
+export * from './ConstructionBrick';

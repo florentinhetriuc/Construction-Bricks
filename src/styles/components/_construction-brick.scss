@@ -1,6 +1,8 @@
 @import "../theme/_theme";
 
-.lego-brick {
+$base-class-selector: ".construction-brick";
+
+#{$base-class-selector} {
     position: relative;
     font-family: var(--font-family-primary);
     font-size: var(--font-size-medium);
@@ -47,7 +49,7 @@
     }
 
     &.--variant-b {
-        .lego-brick__badge {
+        #{$base-class-selector}__badge {
             top: 0;
             right: 0;
             max-width: calc(100% - 8px);
@@ -78,7 +80,7 @@
             }
         }
 
-        .lego-brick__content {
+        #{$base-class-selector}__content {
             padding-right: 40px;
 
             @media screen and (min-width: 768px) {
@@ -86,23 +88,23 @@
             }
         }
 
-        &.--color-red .lego-brick__badge:after {
+        &.--color-red #{$base-class-selector}__badge:after {
             border-bottom-color: var(--red);
         }
 
-        &.--color-green .lego-brick__badge:after {
+        &.--color-green #{$base-class-selector}__badge:after {
             border-bottom-color: var(--green);
         }
 
-        &.--color-violet .lego-brick__badge:after {
-            border-bottom-color: var(--violet   );
+        &.--color-violet #{$base-class-selector}__badge:after {
+            border-bottom-color: var(--violet);
         }
     }
 
     &.--variant-c {
         border-radius: 20px;
 
-        .lego-brick__badge {
+        #{$base-class-selector}__badge {
             top: 0;
             right: 22px;
             max-width: calc(100% - 52px);
