@@ -1,23 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { LegoBrick } from "./LegoBrick";
-import { LegoBrickColor, LegoBrickVariant, LegoBrickBadgePosition } from "./LegoBrick.types";
+import { ConstructionBrick } from "./ConstructionBrick";
+import { ConstructionBrickColor, ConstructionBrickVariant } from "./ConstructionBrick.types";
 
-const meta: Meta<typeof LegoBrick> = {
-  title: "Components/LegoBrick",
-  component: LegoBrick,
+const meta: Meta<typeof ConstructionBrick> = {
+  title: "Components/ConstructionBrick",
+  component: ConstructionBrick,
   tags: ["autodocs"],
   argTypes: {
     color: {
       control: "select",
-      options: Object.values(LegoBrickColor),
+      options: Object.values(ConstructionBrickColor),
     },
     variant: {
       control: "select",
-      options: Object.values(LegoBrickVariant),
-    },
-    badgePosition: {
-      control: "select",
-      options: Object.values(LegoBrickBadgePosition),
+      options: Object.values(ConstructionBrickVariant),
     },
     badgeNrOfDots: {
       control: "number",
@@ -27,7 +23,7 @@ const meta: Meta<typeof LegoBrick> = {
 
 export default meta;
 
-type Story = StoryObj<typeof LegoBrick>;
+type Story = StoryObj<typeof ConstructionBrick>;
 
 const defaultContent = (
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ligula justo, dapibus nec rutrum finibus, blandit at massa. Integer et laoreet lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce aliquam ullamcorper lectus sit amet lobortis. Quisque ut quam molestie, lacinia nibh quis, consequat sapien.</p>
@@ -35,72 +31,72 @@ const defaultContent = (
 
 export const VariantARed: Story = {
   args: {
-    color: LegoBrickColor.RED,
-    variant: LegoBrickVariant.A,
+    color: ConstructionBrickColor.RED,
+    variant: ConstructionBrickVariant.A,
     children: defaultContent,
   },
 };
 
 export const VariantAGreen: Story = {
   args: {
-    color: LegoBrickColor.GREEN,
-    variant: LegoBrickVariant.A,
+    color: ConstructionBrickColor.GREEN,
+    variant: ConstructionBrickVariant.A,
     children: defaultContent,
   },
 };
 
 export const VariantAViolet: Story = {
   args: {
-    color: LegoBrickColor.VIOLET,
-    variant: LegoBrickVariant.A,
+    color: ConstructionBrickColor.VIOLET,
+    variant: ConstructionBrickVariant.A,
     children: defaultContent,
   },
 };
 
 export const VariantBRed: Story = {
   args: {
-    color: LegoBrickColor.RED,
-    variant: LegoBrickVariant.B,
+    color: ConstructionBrickColor.RED,
+    variant: ConstructionBrickVariant.B,
     children: defaultContent,
   },
 };
 
 export const VariantBGreen: Story = {
   args: {
-    color: LegoBrickColor.GREEN,
-    variant: LegoBrickVariant.B,
+    color: ConstructionBrickColor.GREEN,
+    variant: ConstructionBrickVariant.B,
     children: defaultContent,
   },
 };
 
 export const VariantBViolet: Story = {
   args: {
-    color: LegoBrickColor.VIOLET,
-    variant: LegoBrickVariant.B,
+    color: ConstructionBrickColor.VIOLET,
+    variant: ConstructionBrickVariant.B,
     children: defaultContent,
   },
 };
 
 export const VariantCRed: Story = {
   args: {
-    color: LegoBrickColor.RED,
-    variant: LegoBrickVariant.C,
+    color: ConstructionBrickColor.RED,
+    variant: ConstructionBrickVariant.C,
     children: defaultContent,
   },
 };
 
 export const VariantCGreen: Story = {
   args: {
-    color: LegoBrickColor.GREEN,
-    variant: LegoBrickVariant.C,
+    color: ConstructionBrickColor.GREEN,
+    variant: ConstructionBrickVariant.C,
     children: defaultContent,
   },
 };
 
 export const VariantCViolet: Story = {
   args: {
-    color: LegoBrickColor.VIOLET,
-    variant: LegoBrickVariant.C,
+    color: ConstructionBrickColor.VIOLET,
+    variant: ConstructionBrickVariant.C,
     children: defaultContent,
   },
 };
