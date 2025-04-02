@@ -43,7 +43,7 @@ function MyComponent() {
 ```
 
 ## Testing
-Since this is a small component which doesn't require any integration-tests, I would use unit-tests and go with react-testing-library with Jest.
+For unit-tests, I would go with react-testing-library and Jest.
 
 Test cases should include:
 
